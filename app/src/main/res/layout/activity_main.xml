@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -9,37 +10,47 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Screen 1 -->
+        <!-- Screen 1: Add Items -->
         <LinearLayout
             android:id="@+id/screenAdd"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
 
             <EditText
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Item name (e.g., Passport)" />
+                android:hint="Item name (e.g., Passport)"
+                android:inputType="textCapWords"
+                android:maxLength="40"
+                android:singleLine="true" />
 
             <EditText
                 android:id="@+id/etCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Category (e.g., Clothing, Documents)" />
+                android:hint="Category (e.g., Clothing)"
+                android:inputType="textCapWords"
+                android:maxLength="30"
+                android:singleLine="true" />
 
             <EditText
                 android:id="@+id/etQuantity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Quantity (>= 1)"
                 android:inputType="number"
-                android:hint="Quantity (1 or more)" />
+                android:maxLength="3"
+                android:singleLine="true" />
 
             <EditText
                 android:id="@+id/etComment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Comment (optional)" />
+                android:hint="Comment (optional)"
+                android:maxLength="60" />
 
             <Button
                 android:id="@+id/btnAdd"
@@ -56,7 +67,7 @@
                 android:layout_marginTop="8dp" />
         </LinearLayout>
 
-        <!-- Screen 2 -->
+        <!-- Screen 2: List -->
         <LinearLayout
             android:id="@+id/screenList"
             android:layout_width="match_parent"
@@ -69,11 +80,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="300dp" />
 
+            <!-- 🟩 NEW: Clear All button -->
+            <Button
+                android:id="@+id/btnClearAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clear All Items"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#F44336"
+                android:textColor="#FFFFFF" />
+
             <Button
                 android:id="@+id/btnBack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Back to Add Items" />
+                android:text="Back to Add Items"
+                android:layout_marginTop="8dp" />
         </LinearLayout>
 
     </LinearLayout>
